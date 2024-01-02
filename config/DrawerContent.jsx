@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, ImageBackground } from 'react-native'
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
-import Icon2 from 'react-native-vector-icons/FontAwesome5'
+import Icon2 from 'react-native-vector-icons/AntDesign'
 
 import {
     Avatar,
@@ -15,27 +15,32 @@ import {
 var DrawerContentMain = [
     {
         name: "home",
-        title: "Home12",
+        title: "Home",
         // color: "red",
         path: "Home"
     },
     {
-        name: "address-book",
-        title: "Contact",
+        name: "videocamera",
+        title: "Video",
         // color: "blue",
-        path: "Contact"
+        path: "CurveVideo"
     },
     {
-        name: "bahai",
+        name: "setting",
         title: "Setting",
         // color: "red",
-        path: "Home"
+        path: "CurveSetting"
+    },
+    {
+        name: "user",
+        title: "Profile",
+        path: "CurveProfile"
     },
     {
         name: "user-lock",
         title: "Sign out",
         // color: "red",
-        path: "SignUp"
+        path: "Login"
     },
 ]
 function DrawerContent(props) {
@@ -47,7 +52,7 @@ function DrawerContent(props) {
                     <View>
                         <ImageBackground source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmu9qZHSRiMOqjbLmZidt10ailLsX9wNTLpe1erMyUs24TZT3y7Bd8J3NVVuga8mMEW5g&usqp=CAU' }} style={{ width: '100%', height: 180, marginTop: '-2%' }}>
                             <Avatar.Image
-                            size={80}
+                            size={100}
                             color="white"
                                 source={{
                                     uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRspS_ukYMLvsWX4vPkC7PcTiCqJYIASaWapw&usqp=CAU"
@@ -55,22 +60,9 @@ function DrawerContent(props) {
 
 
                                 }
-                                style={{  resizeMode: 'contain', marginTop: '8%',marginLeft:"12%" }} />
+                                style={{  resizeMode: 'contain', marginTop: '8%', display: "flex", justifyContent: "center", alignSelf: "center" }} />
 
-                            <View style={styles.drawerContent}>
-                                <View style={styles.userInfoSection}>
-
-                                    <View style={{ flexDirection: 'row', marginTop: "13%" }}>
-
-                                        <View style={{ marginLeft: 5, flexDirection: 'column' }}>
-                                            <Title style={styles.title}>Name: Atique Ur Rehman</Title>
-                                            <Caption style={styles.caption}>Email: atiquekalwar123@gmail.com</Caption>
-                                        </View>
-                                    </View>
-
-                                </View>
-
-                            </View>
+                            
 
                         </ImageBackground>
                     </View>
@@ -113,28 +105,13 @@ function DrawerContent(props) {
 }
 
 const styles = StyleSheet.create({
-    drawerContent: {
-        flex: 1,
-    },
-    userInfoSection: {
-        paddingLeft: 10,
-    },
+    
     Text: {
         fontWeight: 'bold',
         color: 'red'
 
     },
-    title: {
-        fontSize: 16,
-        color: 'white',
-        marginTop: '-15%',
-        marginLeft: '10%'
-    },
-    caption: {
-        fontSize: 16,
-        color: 'white',
-        marginLeft: '10%'
-    },
+    
     row: {
         marginTop: 20,
         flexDirection: 'row',

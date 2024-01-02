@@ -57,7 +57,6 @@ function SignUp({navigation}) {
     });
   }
   const GoogleSignInFunc = async () => {
-    navigation.navigate('drawer');
     try {
       await GoogleSignin.hasPlayServices();
       GoogleSignin.configure({
@@ -73,6 +72,8 @@ function SignUp({navigation}) {
       const {idToken} = await GoogleSignin.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       await auth().signInWithCredential(googleCredential);
+    navigation.navigate('drawer');
+
 
       return userInfo;
     } catch (error) {
@@ -89,7 +90,12 @@ function SignUp({navigation}) {
   };
   /**AUTHENTICATION WITH Google SECTION END HERE*/
 
+  const handleSignIn =()=>{
+    navigation.navigate("Login")
+  }
+
   return (
+    // <CustomBgImage>
     <View style={styled.container}>
       <Text style={styled.title}> Sign Up Here!!</Text>
       <View style={styled.fields}>
@@ -115,8 +121,12 @@ function SignUp({navigation}) {
         style={styled.Btn}
         mode="contained"
         onPress={createEmailAndPassword}>
-        SignIn
+        Sign Up
       </Button>
+      <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: 10}}>
+        <Text style={{marginRight: 4}}>Already have an account?</Text>
+        <Text style={{color: "blue"}} onPress={handleSignIn}>Signin</Text>
+      </View>
 
       <Text style={styled.otherOption}>
         --------------------or-----------------------
@@ -130,6 +140,7 @@ function SignUp({navigation}) {
       />
       </View>
     </View>
+    // </CustomBgImage>
   );
 }
 

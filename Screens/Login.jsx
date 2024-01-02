@@ -29,9 +29,15 @@ function Login({navigation}) {
       console.log(error);
     }
   };
+
+
+  const handleSignup =()=>{
+    navigation.navigate("SignUp")
+  }
   return (
+    // <CustomBgImage>
     <View style={styled.container}>
-      <Text style={styled.title}>Login Here!!</Text>
+      <Text style={styled.title}>Login Here</Text>
       <View style={styled.fields}>
         <TextInput
           onChangeText={e => setEmail(e)}
@@ -53,6 +59,10 @@ function Login({navigation}) {
       <Button style={styled.Btn} mode="contained" onPress={SignInUser}>
         Login
       </Button>
+      <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: 10}}>
+        <Text style={{marginRight: 4}}>Do you want to Create Account? </Text>
+        <Text style={{color: "blue"}} onPress={handleSignup}>Signup</Text>
+      </View>
     </View>
   );
 }

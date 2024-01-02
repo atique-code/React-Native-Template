@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text} from "react-native";
+// import BtmNavigation from "../config/BtmNavigation";
+import CustomBar from "../config/CustomeNavigationBar";
 
 
-function Home() {
+function Home({navigation}) {
 
     return(
-        <View>
-            <Text>Home page</Text>
+        <View style={{flex: 1}}>
+            {/* <BtmNavigation/> */}
+            <CustomBar  navigation={navigation}/>
         </View>
     )
 }

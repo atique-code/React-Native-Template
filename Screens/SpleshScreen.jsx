@@ -5,7 +5,7 @@ import {Avatar} from 'react-native-paper';
 function SpleshScreen({navigation}) {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Login');
+      navigation.replace('SignUp');
     }, 3000);
   }, []);
 
